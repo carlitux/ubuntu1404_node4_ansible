@@ -6,11 +6,11 @@ RUN apt-get update && apt-get install -y \
 
 # Install a default nodejs for the system
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-RUN apt-add-repository ppa:ansible/ansible
 
 RUN apt-get update
 
-RUN apt-get install ansible -y
 RUN apt-get install --yes nodejs
+RUN apt-get install python-dev -y
+RUN pip install ansible
 
 CMD ["node"]
